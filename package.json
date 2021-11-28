@@ -1,0 +1,12 @@
+{
+  "description": "Reproduction cases for open source issues I find online.",
+  "license": "MIT",
+  "name": "repros",
+  "scripts": {
+    "lint:prune": "ts-prune --skip .d.ts"
+  },
+  "version": "0.0.1",
+  "dependencies": {
+    "ts-prune": "^0.10.2"
+  }
+}

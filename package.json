@@ -1,0 +1,15 @@
+{
+  "author": "Josh Goldberg <me@joshuakgoldberg.com>",
+  "scripts": {
+    "build": "svgr --out-dir built --typescript ./src/icon.svg"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:JoshuaKGoldberg/repros.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@svgr/cli": "^6.1.2",
+    "typescript": "*"
+  }
+}

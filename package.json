@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc",
+    "repro": "node ./src/api.js"
+  }
+}

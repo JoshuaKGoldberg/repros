@@ -1,0 +1,27 @@
+{
+  "name": "eslint-repro",
+  "scripts": {
+    "lint": "DEBUG=typescript-eslint* time eslint --max-warnings 0 --ext .ts src"
+  },
+  "version": "0.1.0",
+  "dependencies": {
+    "chalk": "4.1.2",
+    "cli-progress": "3.10.0",
+    "commander": "8.3.0",
+    "lodash": "4.17.21",
+    "proto-parser": "0.0.8",
+    "typescript": "4.6.2"
+  },
+  "devDependencies": {
+    "@types/cli-progress": "3.9.2",
+    "@types/lodash": "4.14.179",
+    "@types/node": "16.11.7",
+    "@typescript-eslint/eslint-plugin": "5.16.0",
+    "@typescript-eslint/parser": "5.16.0",
+    "eslint": "8.10.0",
+    "eslint-config-arista-ts": "2.0.1",
+    "eslint-plugin-arista": "0.2.3",
+    "eslint-plugin-import": "2.25.4",
+    "tslib": "2.3.1"
+  }
+}

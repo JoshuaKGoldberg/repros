@@ -1,4 +1,9 @@
-# Repros
+# Chai RequireJS Repro
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+First install dependencies:
+
+```shell
+npm i
+```
+
+Then, open `index.html` in a browser.

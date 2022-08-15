@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "chai": "^4.3.6",
+    "requirejs": "^2.3.6"
+  },
+  "description": "Reproduction case for Chai and RequireJS in-browser.",
+  "license": "MIT",
+  "main": "index.js",
+  "name": "chai-requirejs-repro",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}

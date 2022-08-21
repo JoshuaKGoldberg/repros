@@ -1,0 +1,19 @@
+{
+  "author": "Josh Goldberg <npm@joshuakgoldbeg.com>",
+  "description": "Reproduction case for running TSLint with no tslint.json or no enabled rules",
+  "devDependencies": {
+    "tslint": "^6.1.3",
+    "typescript": "^4.7.4"
+  },
+  "license": "MIT",
+  "name": "tslint-no-config-or-rules",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaKGoldberg/repros.git"
+  },
+  "scripts": {
+    "lint": "tslint index.ts",
+    "lint:with-config": "tslint --config tslint.alternate.json index.ts"
+  },
+  "version": "0.0.1"
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "codegen:entrypoints": {
+      "outputs": [
+        "links/**",
+        "shared/**",
+        "ssg/**",
+        "adapters/**",
+        "http/**",
+        "observable/**",
+        "rpc/**",
+        "subscription/**"
+      ]
+    },
+    "codegen:bigBoi": {
+      "outputs": ["server/__generated__/bigBoi/**"]
+    },
+    "codegen:bigLegacyRouter": {
+      "outputs": ["server/__generated__/bigLegacyRouter/**"]
+    },
+    "codegen:mergeRouters": {
+      "outputs": ["src/core/internals/__generated__/**"]
+    },
+    "build": {
+      "dependsOn": ["^build", "codegen:entrypoints", "codegen:mergeRouters"],
+      "outputs": [".next/**", "dist/**", "build/**"]
+    },
+    "@examples/minimal-react#build": {
+      "outputs": ["client/dist/**", "server/dist/**"]
+    },
+    "@examples/next-websockets-starter#build-sqlite": {
+      "dependsOn": ["^build", "prep-sqlite"],
+      "cache": false
+    },
+    "prep-sqlite": {
+      "cache": false
+    },
+    "build-sqlite": {
+      "dependsOn": ["^build", "prep-sqlite"],
+      "outputs": [".next/**", "dist/**"]
+    },
+    "dev": {
+      "cache": false
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "inputs": [".eslint*", "examples/**/.eslint*"],
+      "outputs": [],
+      "cache": true
+    },
+    "lint-fix": {
+      "cache": false
+    },
+    "test": {
+      "dependsOn": ["^build", "codegen:bigBoi", "codegen:bigLegacyRouter"],
+      "cache": false
+    },
+    "test-ci": {
+      "dependsOn": ["^build", "codegen:bigBoi", "codegen:bigLegacyRouter"],
+      "cache": false
+    },
+    "test-dev": {
+      "cache": false
+    },
+    "test-start": {
+      "cache": false
+    },
+    "test-watch": {
+      "cache": false
+    }
+  }
+}

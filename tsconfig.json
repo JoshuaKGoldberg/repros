@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.build.json",
+  "include": ["examples", "scripts"],
+  "compilerOptions": {
+    "allowJs": false
+  }
+}

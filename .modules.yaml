@@ -1,0 +1,85 @@
+hoistPattern:
+  - '*'
+hoistedDependencies:
+  /@next/env/13.2.4:
+    '@next/env': private
+  /@next/swc-android-arm-eabi/13.2.4:
+    '@next/swc-android-arm-eabi': private
+  /@next/swc-android-arm64/13.2.4:
+    '@next/swc-android-arm64': private
+  /@next/swc-darwin-arm64/13.2.4:
+    '@next/swc-darwin-arm64': private
+  /@next/swc-darwin-x64/13.2.4:
+    '@next/swc-darwin-x64': private
+  /@next/swc-freebsd-x64/13.2.4:
+    '@next/swc-freebsd-x64': private
+  /@next/swc-linux-arm-gnueabihf/13.2.4:
+    '@next/swc-linux-arm-gnueabihf': private
+  /@next/swc-linux-arm64-gnu/13.2.4:
+    '@next/swc-linux-arm64-gnu': private
+  /@next/swc-linux-arm64-musl/13.2.4:
+    '@next/swc-linux-arm64-musl': private
+  /@next/swc-linux-x64-gnu/13.2.4:
+    '@next/swc-linux-x64-gnu': private
+  /@next/swc-linux-x64-musl/13.2.4:
+    '@next/swc-linux-x64-musl': private
+  /@next/swc-win32-arm64-msvc/13.2.4:
+    '@next/swc-win32-arm64-msvc': private
+  /@next/swc-win32-ia32-msvc/13.2.4:
+    '@next/swc-win32-ia32-msvc': private
+  /@next/swc-win32-x64-msvc/13.2.4:
+    '@next/swc-win32-x64-msvc': private
+  /@swc/helpers/0.4.14:
+    '@swc/helpers': private
+  /caniuse-lite/1.0.30001474:
+    caniuse-lite: private
+  /client-only/0.0.1:
+    client-only: private
+  /js-tokens/4.0.0:
+    js-tokens: private
+  /loose-envify/1.4.0:
+    loose-envify: private
+  /nanoid/3.3.6:
+    nanoid: private
+  /picocolors/1.0.0:
+    picocolors: private
+  /postcss/8.4.14:
+    postcss: private
+  /scheduler/0.23.0:
+    scheduler: private
+  /source-map-js/1.0.2:
+    source-map-js: private
+  /styled-jsx/5.1.1_react@18.2.0:
+    styled-jsx: private
+  /tslib/2.5.0:
+    tslib: private
+included:
+  dependencies: true
+  devDependencies: true
+  optionalDependencies: true
+injectedDeps: {}
+layoutVersion: 5
+nodeLinker: isolated
+packageManager: pnpm@7.30.0
+pendingBuilds: []
+prunedAt: Thu, 06 Apr 2023 18:54:35 GMT
+publicHoistPattern:
+  - '*eslint*'
+  - '*prettier*'
+registries:
+  default: https://registry.npmjs.org/
+skipped:
+  - /@next/swc-android-arm-eabi/13.2.4
+  - /@next/swc-android-arm64/13.2.4
+  - /@next/swc-darwin-x64/13.2.4
+  - /@next/swc-freebsd-x64/13.2.4
+  - /@next/swc-linux-arm-gnueabihf/13.2.4
+  - /@next/swc-linux-arm64-gnu/13.2.4
+  - /@next/swc-linux-arm64-musl/13.2.4
+  - /@next/swc-linux-x64-gnu/13.2.4
+  - /@next/swc-linux-x64-musl/13.2.4
+  - /@next/swc-win32-arm64-msvc/13.2.4
+  - /@next/swc-win32-ia32-msvc/13.2.4
+  - /@next/swc-win32-x64-msvc/13.2.4
+storeDir: /Users/josh/Library/pnpm/store/v3
+virtualStoreDir: .pnpm

@@ -5,6 +5,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 Preparation:
 
 ```sh
+git clone https://github.com/JoshuaKGoldberg/repros
+cd repros
+git checkout draft-js-emoji-plugin-emoji-toolkit-performance
 pnpm install
 ```
 

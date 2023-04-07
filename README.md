@@ -70,3 +70,10 @@ That file is located at an address like `webpack://_N_E/node_modules/.pnpm/emoji
 We can see it on GitHub at https://github.com/joypixels/emoji-toolkit/blob/7ed2733fac44df78fc7628cb51a0be5fb23066e3/lib/js/joypixels.js#L472.
 
 [^1]: Measurements taken on a 2022 Mac Studio with an Apple M1 Max chip.
+
+## Next Steps
+
+These have been reported to the `emoji-toolkit` repository:
+
+* https://github.com/joypixels/emoji-toolkit/pull/57
+* https://github.com/joypixels/emoji-toolkit/issues/58

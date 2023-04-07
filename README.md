@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Description of Issue
 
-This app has a minimum reproduction of using [emoji plugin`](https://www.draft-js-plugins.com/plugin/emoji) for [Draft.js](https://draftjs.org).
+This app has a minimum reproduction of using the [emoji plugin](https://www.draft-js-plugins.com/plugin/emoji) for [Draft.js](https://draftjs.org).
 It demonstrates a >=2 second[^1] slowdown due to slow regular expressions.
 
 ### Performance Audit

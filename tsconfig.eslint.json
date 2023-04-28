@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "paths": {
-      "~/*": ["./in-eslint/*"]
-    }
-  },
-  "extends": "./tsconfig.json"
-}

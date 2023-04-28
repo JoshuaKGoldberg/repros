@@ -3,7 +3,7 @@
     "allowJs": true,
     "noEmit": true,
     "paths": {
-      "~/*": ["./in-default/*"]
+      "~/*": ["./in-custom/*"]
     },
     "strict": true,
     "target": "ESNext"

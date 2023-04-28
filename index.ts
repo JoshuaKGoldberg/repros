@@ -1,3 +1,8 @@
-import { runMyFunction } from "~/creator";
+import {
+  functionAsyncDefaultSyncESLint,
+  functionDefaultSyncCustomAsync,
+} from "~/creator";
 
-runMyFunction();
+functionAsyncDefaultSyncESLint();
+
+functionDefaultSyncCustomAsync();

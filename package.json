@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "cypress": "^12.17.3",
+    "cypress-iframe": "^1.0.1",
+    "http-server": "^14.1.1",
+    "start-server-and-test": "^2.0.0"
+  },
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "start": "http-server --port 1337",
+    "test": "start-server-and-test start http://localhost:1337 cy:run"
+  }
+}

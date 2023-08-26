@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "vitest": "^0.34.3",
+    "console-fail-test": "^0.2.3",
+    "knip": "^2.20.0"
+  },
+  "scripts": {
+    "knip": "knip"
+  }
+}

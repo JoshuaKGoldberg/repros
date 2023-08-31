@@ -1,4 +1,8 @@
-# Repros
+# consistent-type-assertions Type Information
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+Following up on https://github.com/typescript-eslint/typescript-eslint/pull/6885.
+
+```shell
+npm i
+npm run lint
+```

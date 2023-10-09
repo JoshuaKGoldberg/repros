@@ -1,0 +1,1 @@
+export const value255 = 255

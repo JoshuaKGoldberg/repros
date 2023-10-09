@@ -1,0 +1,1 @@
+export const value1080 = 1080

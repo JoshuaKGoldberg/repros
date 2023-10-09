@@ -1,0 +1,1 @@
+export const value360 = 360

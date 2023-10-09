@@ -1,0 +1,1 @@
+export const value2227 = 2227

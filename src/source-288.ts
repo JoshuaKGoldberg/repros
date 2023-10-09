@@ -1,0 +1,1 @@
+export const value288 = 288

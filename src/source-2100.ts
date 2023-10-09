@@ -1,0 +1,1 @@
+export const value2100 = 2100

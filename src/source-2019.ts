@@ -1,0 +1,1 @@
+export const value2019 = 2019

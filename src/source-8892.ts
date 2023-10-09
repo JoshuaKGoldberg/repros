@@ -1,0 +1,1 @@
+export const value8892 = 8892

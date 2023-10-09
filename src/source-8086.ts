@@ -1,0 +1,1 @@
+export const value8086 = 8086

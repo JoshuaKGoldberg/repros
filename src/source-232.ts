@@ -1,0 +1,1 @@
+export const value232 = 232

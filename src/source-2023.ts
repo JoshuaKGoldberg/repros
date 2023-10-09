@@ -1,0 +1,1 @@
+export const value2023 = 2023

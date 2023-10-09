@@ -1,0 +1,1 @@
+export const value45 = 45

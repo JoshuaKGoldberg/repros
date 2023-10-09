@@ -1,0 +1,1 @@
+export const value1234 = 1234

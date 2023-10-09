@@ -1,0 +1,1 @@
+export const value365 = 365

@@ -1,0 +1,17 @@
+diff --git a/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js b/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
+index 94bff40..5c67666 100644
+--- a/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
++++ b/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
+@@ -7,11 +7,8 @@ exports.useProgramFromProjectService = void 0;
+ const path_1 = __importDefault(require("path"));
+ const createProjectProgram_1 = require("./create-program/createProjectProgram");
+ function useProgramFromProjectService(projectService, parseSettings) {
+-    const opened = projectService.openClientFile(absolutify(parseSettings.filePath), parseSettings.codeFullText, 
++    projectService.openClientFile(absolutify(parseSettings.filePath), parseSettings.codeFullText, 
+     /* scriptKind */ undefined, parseSettings.tsconfigRootDir);
+-    if (!opened.configFileName) {
+-        return undefined;
+-    }
+     const scriptInfo = projectService.getScriptInfo(parseSettings.filePath);
+     const program = projectService
+         .getDefaultProjectForFile(scriptInfo.fileName, true)

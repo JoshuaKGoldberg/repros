@@ -1,6 +1,6 @@
 # Project Service Without Opened File Repro
 
-Reproduction for my fix to <https://github.com/typescript-eslint/typescript-eslint/issues/7435>.
+Reproduction for my fix to <https://github.com/typescript-eslint/typescript-eslint/issues/7435>: <https://github.com/typescript-eslint/typescript-eslint/pull/7752>.
 Shows that removing the `opened` check allows non-program files to be linted properly.
 
 ```shell

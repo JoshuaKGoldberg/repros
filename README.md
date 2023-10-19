@@ -7,7 +7,7 @@ Additionally shows that while the _project_ is reused when `useSingleInferredPro
 
 ## With `useSingleInferredProject`
 
-Similarly turning `useSingleInferredProject` and `useInferredProjectPerProjectRoot` on:
+Simultaneously turning on `useSingleInferredProject` and `useInferredProjectPerProjectRoot`:
 
 ```shell
 TSESLINT_UNIFIED_PROJECTS=true npm run lint
@@ -21,54 +21,42 @@ useSingleInferredProject true
 
 🆕 Default project for /Users/josh/repos/repros/greet-a.ts didn't already exist.
 🆕 Program for /Users/josh/repos/repros/greet-a.ts didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/greet-c.ts'
-]
+🆕 Source file for /Users/josh/repos/repros/greet-a.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/greet-b.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/greet-c.ts didn't already exist.
 
 ✔️ Default project for /Users/josh/repos/repros/greet-b.ts already exists.
 ✔️ Program for /Users/josh/repos/repros/greet-b.ts already exists.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/greet-c.ts'
-]
+✔️ Source file for /Users/josh/repos/repros/greet-a.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-b.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-c.ts already exists.
 
 ✔️ Default project for /Users/josh/repos/repros/greet-c.ts already exists.
 ✔️ Program for /Users/josh/repos/repros/greet-c.ts already exists.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/greet-c.ts'
-]
+✔️ Source file for /Users/josh/repos/repros/greet-a.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-b.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-c.ts already exists.
 
 🆕 Default project for /Users/josh/repos/repros/vanilla-a.js didn't already exist.
 🆕 Program for /Users/josh/repos/repros/vanilla-a.js didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/vanilla-a.js'
-]
+🆕 Source file for /Users/josh/repos/repros/greet-a.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/vanilla-a.js didn't already exist.
 
 ✔️ Default project for /Users/josh/repos/repros/vanilla-b.js already exists.
 🆕 Program for /Users/josh/repos/repros/vanilla-b.js didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/vanilla-a.js',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/vanilla-b.js'
-]
+✔️ Source file for /Users/josh/repos/repros/greet-a.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/vanilla-a.js already exists.
+🆕 Source file for /Users/josh/repos/repros/greet-b.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/vanilla-b.js didn't already exist.
 
 ✔️ Default project for /Users/josh/repos/repros/vanilla-c.js already exists.
 🆕 Program for /Users/josh/repos/repros/vanilla-c.js didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/vanilla-a.js',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/vanilla-b.js',
-  '/Users/josh/repos/repros/greet-c.ts',
-  '/Users/josh/repos/repros/vanilla-c.js'
-]
+✔️ Source file for /Users/josh/repos/repros/greet-a.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/vanilla-a.js already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-b.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/vanilla-b.js already exists.
+🆕 Source file for /Users/josh/repos/repros/greet-c.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/vanilla-c.js didn't already exist.
 
 /Users/josh/repos/repros/vanilla-a.js
   5:1  error  Promises must be awaited, end with a call to .catch, end with a call to .then with a rejection handler or be explicitly marked as ignored with the `void` operator  @typescript-eslint/no-floating-promises
@@ -100,48 +88,36 @@ useSingleInferredProject false
 
 🆕 Default project for /Users/josh/repos/repros/greet-a.ts didn't already exist.
 🆕 Program for /Users/josh/repos/repros/greet-a.ts didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/greet-c.ts'
-]
+🆕 Source file for /Users/josh/repos/repros/greet-a.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/greet-b.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/greet-c.ts didn't already exist.
 
 ✔️ Default project for /Users/josh/repos/repros/greet-b.ts already exists.
 ✔️ Program for /Users/josh/repos/repros/greet-b.ts already exists.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/greet-c.ts'
-]
+✔️ Source file for /Users/josh/repos/repros/greet-a.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-b.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-c.ts already exists.
 
 ✔️ Default project for /Users/josh/repos/repros/greet-c.ts already exists.
 ✔️ Program for /Users/josh/repos/repros/greet-c.ts already exists.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/greet-c.ts'
-]
+✔️ Source file for /Users/josh/repos/repros/greet-a.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-b.ts already exists.
+✔️ Source file for /Users/josh/repos/repros/greet-c.ts already exists.
 
 🆕 Default project for /Users/josh/repos/repros/vanilla-a.js didn't already exist.
 🆕 Program for /Users/josh/repos/repros/vanilla-a.js didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-a.ts',
-  '/Users/josh/repos/repros/vanilla-a.js'
-]
+🆕 Source file for /Users/josh/repos/repros/greet-a.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/vanilla-a.js didn't already exist.
 
 🆕 Default project for /Users/josh/repos/repros/vanilla-b.js didn't already exist.
 🆕 Program for /Users/josh/repos/repros/vanilla-b.js didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-b.ts',
-  '/Users/josh/repos/repros/vanilla-b.js'
-]
+🆕 Source file for /Users/josh/repos/repros/greet-b.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/vanilla-b.js didn't already exist.
 
 🆕 Default project for /Users/josh/repos/repros/vanilla-c.js didn't already exist.
 🆕 Program for /Users/josh/repos/repros/vanilla-c.js didn't already exist.
-Program file names: [
-  '/Users/josh/repos/repros/greet-c.ts',
-  '/Users/josh/repos/repros/vanilla-c.js'
-]
+🆕 Source file for /Users/josh/repos/repros/greet-c.ts didn't already exist.
+🆕 Source file for /Users/josh/repos/repros/vanilla-c.js didn't already exist.
 
 /Users/josh/repos/repros/vanilla-a.js
   5:1  error  Promises must be awaited, end with a call to .catch, end with a call to .then with a rejection handler or be explicitly marked as ignored with the `void` operator  @typescript-eslint/no-floating-promises

@@ -19,10 +19,10 @@ index 46240fe..33787c2 100644
              close: doNothing,
              endGroup: doNothing,
 diff --git a/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js b/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
-index 94bff40..f6688cd 100644
+index 94bff40..86b8127 100644
 --- a/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
 +++ b/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
-@@ -7,20 +7,41 @@ exports.useProgramFromProjectService = void 0;
+@@ -7,20 +7,38 @@ exports.useProgramFromProjectService = void 0;
  const path_1 = __importDefault(require("path"));
  const createProjectProgram_1 = require("./create-program/createProjectProgram");
  function useProgramFromProjectService(projectService, parseSettings) {
@@ -49,22 +49,19 @@ index 94bff40..f6688cd 100644
      }
 +
 +    logGlobalUniqueness("Program", program);
-+    console.log(
-+        "Program file names:",
-+        program.getSourceFiles()
-+            .map(sourceFile => sourceFile.fileName)
-+            .filter(fileName => !fileName.endsWith(".d.ts")),
-+    );
++    program.getSourceFiles()
++        .filter(sourceFile => !sourceFile.fileName.endsWith(".d.ts"))
++        .forEach(sourceFile => logGlobalUniqueness("Source file", sourceFile, sourceFile.fileName));
 +
      return (0, createProjectProgram_1.createProjectProgram)(parseSettings, [program]);
-+    function logGlobalUniqueness(alias, value) {
-+        globalThis[alias] ??= new Set();
++    function logGlobalUniqueness(group, value, alias = parseSettings.filePath) {
++        globalThis[group] ??= new Set();
 +    
-+        if (globalThis[alias].has(value)) {
-+            console.log("✔️", alias, "for", parseSettings.filePath, "already exists.")
++        if (globalThis[group].has(value)) {
++            console.log("✔️", group, "for", alias, "already exists.")
 +        } else {
-+            console.log("🆕", alias, "for", parseSettings.filePath, "didn't already exist.")
-+            globalThis[alias].add(value);
++            console.log("🆕", group, "for", alias, "didn't already exist.")
++            globalThis[group].add(value);
 +        }
 +    }
      function absolutify(filePath) {

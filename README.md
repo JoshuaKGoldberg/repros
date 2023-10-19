@@ -2,8 +2,8 @@
 
 Showing how test runners display v8 code coverage of a types-only file:
 
-- [Jest with Babel](https://jestjs.io/docs/getting-started#using-typescript): ✅ excludes the file
-- [Jest with ts-jest](https://github.com/kulshekhar/ts-jest): ✅ excludes the file
+- [Jest with Babel](https://jestjs.io/docs/getting-started#using-typescript): ❌ factors in the file
+- [Jest with ts-jest](https://github.com/kulshekhar/ts-jest): ❌ factors in the file
 - [Vitest](https://www.npmjs.com/package/@vitest/coverage-v8): ❌ factors in the file
 
 ```shell
@@ -29,8 +29,9 @@ npm run test:jest:babel
 ----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ----------|---------|----------|---------|---------|-------------------
-All files |     100 |      100 |     100 |     100 |
+All files |    62.5 |    66.66 |      50 |    62.5 |
  index.ts |     100 |      100 |     100 |     100 |
+ types.ts |       0 |        0 |       0 |       0 | 1-3
 ----------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total
@@ -57,8 +58,9 @@ npm run test:jest:ts-jest
 ----------|---------|----------|---------|---------|-------------------
 File      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
 ----------|---------|----------|---------|---------|-------------------
-All files |     100 |      100 |     100 |     100 |
+All files |    62.5 |    66.66 |      50 |    62.5 |
  index.ts |     100 |      100 |     100 |     100 |
+ types.ts |       0 |        0 |       0 |       0 | 1-3
 ----------|---------|----------|---------|---------|-------------------
 Test Suites: 1 passed, 1 total
 Tests:       1 passed, 1 total

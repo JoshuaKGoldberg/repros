@@ -1,4 +1,4 @@
-import { greet, greetAfterASecond } from "./greet.js";
+import { greet, greetAfterASecond } from "./greet-b.js";
 
 greet("Hello, world!");
 

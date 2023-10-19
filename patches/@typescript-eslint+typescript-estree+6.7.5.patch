@@ -1,8 +1,28 @@
+diff --git a/node_modules/@typescript-eslint/typescript-estree/dist/create-program/createProjectService.js b/node_modules/@typescript-eslint/typescript-estree/dist/create-program/createProjectService.js
+index 46240fe..33787c2 100644
+--- a/node_modules/@typescript-eslint/typescript-estree/dist/create-program/createProjectService.js
++++ b/node_modules/@typescript-eslint/typescript-estree/dist/create-program/createProjectService.js
+@@ -21,11 +21,13 @@ function createProjectService() {
+         watchDirectory: createStubFileWatcher,
+         watchFile: createStubFileWatcher,
+     };
++    const useSingleInferredProject = !!process.env.TSESLINT_UNIFIED_PROJECTS;
++    console.log("useSingleInferredProject", useSingleInferredProject);
+     return new tsserver.server.ProjectService({
+         host: system,
+         cancellationToken: { isCancellationRequested: () => false },
+-        useSingleInferredProject: false,
+-        useInferredProjectPerProjectRoot: false,
++        useSingleInferredProject: useSingleInferredProject,
++        useInferredProjectPerProjectRoot: useSingleInferredProject,
+         logger: {
+             close: doNothing,
+             endGroup: doNothing,
 diff --git a/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js b/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
-index 94bff40..5c67666 100644
+index 94bff40..f6688cd 100644
 --- a/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
 +++ b/node_modules/@typescript-eslint/typescript-estree/dist/useProgramFromProjectService.js
-@@ -7,11 +7,8 @@ exports.useProgramFromProjectService = void 0;
+@@ -7,20 +7,41 @@ exports.useProgramFromProjectService = void 0;
  const path_1 = __importDefault(require("path"));
  const createProjectProgram_1 = require("./create-program/createProjectProgram");
  function useProgramFromProjectService(projectService, parseSettings) {
@@ -13,5 +33,40 @@ index 94bff40..5c67666 100644
 -        return undefined;
 -    }
      const scriptInfo = projectService.getScriptInfo(parseSettings.filePath);
-     const program = projectService
-         .getDefaultProjectForFile(scriptInfo.fileName, true)
+-    const program = projectService
+-        .getDefaultProjectForFile(scriptInfo.fileName, true)
++    const defaultProject = projectService
++        .getDefaultProjectForFile(scriptInfo.fileName, true);
++
++    console.log("");
++    logGlobalUniqueness("Default project", defaultProject);
++
++    const program = defaultProject
+         .getLanguageService(/*ensureSynchronized*/ true)
+         .getProgram();
+     if (!program) {
+         return undefined;
+     }
++
++    logGlobalUniqueness("Program", program);
++    console.log(
++        "Program file names:",
++        program.getSourceFiles()
++            .map(sourceFile => sourceFile.fileName)
++            .filter(fileName => !fileName.endsWith(".d.ts")),
++    );
++
+     return (0, createProjectProgram_1.createProjectProgram)(parseSettings, [program]);
++    function logGlobalUniqueness(alias, value) {
++        globalThis[alias] ??= new Set();
++    
++        if (globalThis[alias].has(value)) {
++            console.log("✔️", alias, "for", parseSettings.filePath, "already exists.")
++        } else {
++            console.log("🆕", alias, "for", parseSettings.filePath, "didn't already exist.")
++            globalThis[alias].add(value);
++        }
++    }
+     function absolutify(filePath) {
+         return path_1.default.isAbsolute(filePath)
+             ? filePath

@@ -7,7 +7,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "lint": "eslint greet.ts vanilla.js",
+    "lint": "eslint greet*.ts vanilla*.js",
     "postinstall": "patch-package"
   }
 }

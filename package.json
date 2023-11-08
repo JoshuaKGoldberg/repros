@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "eslint": "^8.53.0",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "lint:default": "npx eslint *.*s src/*",
+    "lint:duplicated": "ALLOW_DEFAULT_PROJECT_FOR_FILES=\"./**/*\" npx eslint *.*s src/*",
+    "lint:fixed": "ALLOW_DEFAULT_PROJECT_FOR_FILES=\"./.*.cjs\" npx eslint *.*s src/*"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^20.8.10",
+    "globby": "^13.2.2"
+  }
+}

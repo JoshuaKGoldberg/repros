@@ -24,3 +24,5 @@ Changing `tsconfig.json` in those two ways allows the project service to pick up
 cp tsconfig.working.json tsconfig.json
 npm run lint
 ```
+
+Filed as https://github.com/typescript-eslint/typescript-eslint/issues/8206.

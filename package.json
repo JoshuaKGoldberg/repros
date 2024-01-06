@@ -13,6 +13,9 @@
     "@typescript-eslint/eslint-plugin": "^6.18.0",
     "@typescript-eslint/parser": "^6.18.0",
     "eslint": "^8.56.0",
-    "typescript": "^5.3.3"
+    "typescript": "https://typescript.visualstudio.com/cf7ac146-d525-443c-b23c-0d58337efebc/_apis/build/builds/159290/artifacts?artifactName=tgz&fileId=5245E673FFE77490D274A02F2F6481C0C4D93A36BACFCF29AD837854445FD3FC02&fileName=/typescript-5.4.0-insiders.20240105.tgz"
+  },
+  "resolutions": {
+    "typescript": "https://typescript.visualstudio.com/cf7ac146-d525-443c-b23c-0d58337efebc/_apis/build/builds/159290/artifacts?artifactName=tgz&fileId=5245E673FFE77490D274A02F2F6481C0C4D93A36BACFCF29AD837854445FD3FC02&fileName=/typescript-5.4.0-insiders.20240105.tgz"
   }
 }

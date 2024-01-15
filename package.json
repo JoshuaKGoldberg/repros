@@ -1,0 +1,10 @@
+{
+  "name": "repro-mocha-watchfile-updates",
+  "scripts": {
+    "test": "mocha --watch --watch-files lib-a,test"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}

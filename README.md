@@ -1,4 +1,8 @@
-# Repros
+# Repro: Mocha --fail-zero + --parallel + --grep
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+Reproduction case for https://github.com/mochajs/mocha/issues/4969.
+
+```shell
+npm i
+npm run test
+```

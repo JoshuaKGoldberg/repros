@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npm run parallel-and-failzero || exit $?; npm run parallel-and-grep || exit $?; npm run failzero-and-grep || exit $?; npm run test-failing || exit $?",
+    "parallel-and-failzero": "mocha --parallel --fail-zero",
+    "parallel-and-grep": "mocha --parallel --grep hello2",
+    "failzero-and-grep": "mocha --fail-zero --grep hello2",
+    "test-failing": "mocha --parallel --fail-zero --grep hello2"
+  },
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}

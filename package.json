@@ -1,0 +1,15 @@
+{
+  "name": "repros",
+  "version": "1.0.0",
+  "description": "Reproduction cases for open source issues I find online. See [branches](https://github.com/JoshuaKGoldberg/repros/branches).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  }
+}

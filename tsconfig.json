@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "jsxFactory": "other",
+    "jsxImportSource": "other",
+    "noEmit": true
+  }
+}

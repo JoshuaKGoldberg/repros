@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@typescript-eslint/eslint-plugin": "^6.20.0",
+    "@typescript-eslint/parser": "^6.20.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3"
+  },
+  "scripts": {
+    "lint": "npx eslint index.tsx"
+  }
+}

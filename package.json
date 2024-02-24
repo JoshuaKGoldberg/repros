@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "test": "eslint index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-plugin-import": "^2.29.1"
+  },
+  "type": "module"
+}

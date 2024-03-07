@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "license": "MIT",
+  "name": "create-typescript-app-jest-to-vitest-migration",
+  "description": "Testing the Jest to Vitest parts of create-typescript-app migrations",
+  "scripts": {
+    "test": "jest"
+  }
+}

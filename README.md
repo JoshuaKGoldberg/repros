@@ -1,4 +1,7 @@
-# Repros
+# Repro: create-typescript-app's Jest to Vitest Migration
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+Testing the Jest to Vitest parts of create-typescript-app.
+
+```shell
+npx create-typescript-app --auto --mode migrate
+```

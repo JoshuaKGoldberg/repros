@@ -1,11 +1,58 @@
 {
-  "devDependencies": {
-    "jest": "^29.7.0"
-  },
-  "license": "MIT",
-  "name": "create-typescript-app-jest-to-vitest-migration",
-  "description": "Testing the Jest to Vitest parts of create-typescript-app migrations",
-  "scripts": {
-    "test": "jest"
-  }
+	"name": "repros",
+	"version": "0.0.0",
+	"description": "Testing the Jest to Vitest parts of repros migrations",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JoshuaKGoldberg/repros"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "JoshuaKGoldberg",
+		"email": "npm@joshuakgoldberg.com"
+	},
+	"type": "module",
+	"main": "./lib/index.js",
+	"files": [
+		"lib/",
+		"package.json",
+		"LICENSE.md",
+		"README.md"
+	],
+	"scripts": {
+		"build": "tsup",
+		"format": "prettier .",
+		"lint": "eslint . .*js --max-warnings 0",
+		"prepare": "husky install",
+		"test": "jest",
+		"tsc": "tsc"
+	},
+	"lint-staged": {
+		"*": "prettier --ignore-unknown --write"
+	},
+	"devDependencies": {
+		"@types/eslint": "^8.56.5",
+		"@typescript-eslint/eslint-plugin": "^7.1.1",
+		"@typescript-eslint/parser": "^7.1.1",
+		"eslint": "^8.57.0",
+		"eslint-plugin-deprecation": "^2.0.0",
+		"eslint-plugin-eslint-comments": "^3.2.0",
+		"eslint-plugin-jsdoc": "^48.2.1",
+		"eslint-plugin-n": "^16.6.2",
+		"eslint-plugin-regexp": "^2.2.0",
+		"husky": "^9.0.11",
+		"lint-staged": "^15.2.2",
+		"prettier": "^3.2.5",
+		"prettier-plugin-curly": "^0.1.4",
+		"prettier-plugin-packagejson": "^2.4.12",
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.2"
+	},
+	"packageManager": "pnpm@8.15.1",
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"provenance": true
+	}
 }

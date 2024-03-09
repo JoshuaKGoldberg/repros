@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "eslint": "^8.57.0",
+    "eslint-plugin-jsdoc": "^48.2.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint index.js"
+  }
+}

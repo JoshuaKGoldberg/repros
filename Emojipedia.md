@@ -1,0 +1,285 @@
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Emoji</th>
+      <th rowspan="2">CLDR Name</th>
+      <th rowspan="2">Apple Name</th>
+      <th rowspan="2">Also Known As</th>
+      <th colspan="4">Shortcodes</th>
+    </tr>
+    <tr>
+      <th>Discord</th>
+      <th>Emojipedia</th>
+      <th>GitHub</th>
+      <th>Slack</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>🛫</th>
+      <td>Airplane Departure</td>
+      <td>Airplane Taking Off</td>
+      <td>
+        <ul>
+          <li>Aeroplane Taking Off</li>
+          <li>Plane Taking Off</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:airplane_departure:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:airplane_departure:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flight_departure:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:airplane_departure:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>🍆</th>
+      <td>Eggplant</td>
+      <td>Eggplant</td>
+      <td>
+        <ul>
+          <li>Eggplant</li>
+          <li>Phallic</li>
+          <li>Purple Vegetable</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:eggplant:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:eggplant:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:eggplant:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:eggplant:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>🇲🇽</th>
+      <td>Flag: Mexico</td>
+      <td>Flag of Mexico</td>
+      <td>
+        <ul>
+          <li>Mexican Flag</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flag_mx:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flag_mexico:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:mexico:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flag-mx:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>🔦</th>
+      <td>Flashlight</td>
+      <td>Flashlight</td>
+      <td>
+        <ul>
+          <li>Flashlight</li>
+          <li>Torch</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flashlight:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flashlight:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flashlight:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:flashlight:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>📱</th>
+      <td>Mobile Phone</td>
+      <td>Mobile Phone</td>
+      <td>
+        <ul>
+          <li>Cell Phone</li>
+          <li>iPhone</li>
+          <li>Smartphone</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:mobile_phone:</code></li>
+          <li><code>:iphone:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:mobile_phone:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:iphone:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:iphone:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>🎉</th>
+      <td>Party Popper</td>
+      <td>Party Popper</td>
+      <td>
+        <ul>
+          <li>Celebration</li>
+          <li>Party Hat</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:tada:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:party_popper:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:tada:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:tada:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>💩</th>
+      <td>Pile of Poo</td>
+      <td>Pile of Poop</td>
+      <td>
+        <ul>
+          <li>Dog Dirt</li>
+          <li>Smiling Poop</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:poop:</code></li>
+          <li><code>:shit:</code></li>
+          <li><code>:hankey:</code></li>
+          <li><code>:poo:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:pile_of_poo:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:hankey:</code></li>
+          <li><code>:poop:</code></li>
+          <li><code>:shit:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:hankey:</code></li>
+          <li><code>:poop:</code></li>
+          <li><code>:shit:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+    <tr>
+      <th>❤️</th>
+      <td>Red Heart</td>
+      <td>Red Heart</td>
+      <td>
+        <ul>
+          <li>Heart</li>
+          <li>Love Heart</li>
+          <li>Red Heart</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:heart:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:red_heart:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:heart:</code></li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><code>:heart:</code></li>
+        </ul>
+      </td>
+      </td>
+    </tr>
+  </tbody>
+</table>

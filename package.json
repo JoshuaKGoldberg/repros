@@ -1,0 +1,22 @@
+{
+  "name": "repros",
+  "version": "1.0.0",
+  "description": "Reproduction cases for open source issues I find online. See [branches](https://github.com/JoshuaKGoldberg/repros/branches).",
+  "main": "index.js",
+  "dependencies": {
+    "console-table-printer": "^2.12.0",
+    "emojilib": "^3.0.11",
+    "emojipedia": "^0.2.0",
+    "json-html-table": "^2.0.1",
+    "markdown-table": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.28",
+    "tsx": "^4.7.1"
+  },
+  "scripts": {
+    "build": "tsx src/index.ts"
+  },
+  "license": "MIT",
+  "type": "module"
+}

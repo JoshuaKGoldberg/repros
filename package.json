@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "change-case": "^5.4.3",
+    "emoji-platform-data": "^0.1.0",
+    "emojilib": "^3.0.11",
+    "emojipedia": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.29",
+    "tsx": "^4.7.1"
+  },
+  "license": "MIT",
+  "type": "module"
+}

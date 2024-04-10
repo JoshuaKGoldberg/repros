@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "eslint": "^8.57.0",
+    "jsonc-eslint-parser": "^2.4.0",
+    "typescript-eslint": "^7.6.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint package.json"
+  },
+  "type": "module"
+}

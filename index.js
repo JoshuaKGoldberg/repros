@@ -13,12 +13,8 @@ const comments = new Map([
 
 const newNonStrictRules = {
   promoteToRecommended: new Set(["no-unsafe-unary-minus"]),
-  promoteToStrict: new Set([]),
-  promoteToStylistic: new Set([
-    "prefer-find",
-    "no-unused-expressions",
-    "prefer-regexp-exec",
-  ]),
+  promoteToStrict: new Set(["prefer-find"]),
+  promoteToStylistic: new Set(["no-unused-expressions", "prefer-regexp-exec"]),
   remain: new Set([
     "class-methods-use-this",
     "consistent-return",

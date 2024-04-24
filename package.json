@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "eslint": "^9.1.1",
+    "eslint-plugin-es-x": "^7.6.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "type": "module"
+}

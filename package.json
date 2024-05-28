@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.20"
+  },
+  "license": "MIT",
+  "scripts": {
+    "tsc": "tsc"
+  }
+}

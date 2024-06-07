@@ -1,0 +1,132 @@
+diff --git a/node_modules/fastify/fastify.d.ts b/node_modules/fastify/fastify.d.ts
+index 4ddf06e..695f56b 100644
+--- a/node_modules/fastify/fastify.d.ts
++++ b/node_modules/fastify/fastify.d.ts
+@@ -22,7 +22,7 @@ import { FastifyRequest, RequestGenericInterface } from './types/request'
+ import { RouteHandler, RouteHandlerMethod, RouteOptions, RouteShorthandMethod, RouteShorthandOptions, RouteShorthandOptionsWithHandler, RouteGenericInterface } from './types/route'
+ import { FastifySchema, FastifySchemaCompiler, FastifySchemaValidationError, SchemaErrorDataVar, SchemaErrorFormatter } from './types/schema'
+ import { FastifyServerFactory, FastifyServerFactoryHandler } from './types/serverFactory'
+-import { FastifyTypeProvider, FastifyTypeProviderDefault } from './types/type-provider'
++import { FastifyTypeProvider, FastifyTypeProviderDefault, SafePromiseLike } from './types/type-provider'
+ import { HTTPMethods, RawServerBase, RawRequestDefaultExpression, RawReplyDefaultExpression, RawServerDefault, ContextConfigDefault, RequestBodyDefault, RequestQuerystringDefault, RequestParamsDefault, RequestHeadersDefault } from './types/utils'
+ 
+ declare module '@fastify/error' {
+@@ -185,7 +185,7 @@ declare namespace fastify {
+     HTTPMethods, RawServerBase, RawRequestDefaultExpression, RawReplyDefaultExpression, RawServerDefault, ContextConfigDefault, RequestBodyDefault, RequestQuerystringDefault, RequestParamsDefault, RequestHeadersDefault, // './types/utils'
+     DoneFuncWithErrOrRes, HookHandlerDoneFunction, RequestPayload, onCloseAsyncHookHandler, onCloseHookHandler, onErrorAsyncHookHandler, onErrorHookHandler, onReadyAsyncHookHandler, onReadyHookHandler, onListenAsyncHookHandler, onListenHookHandler, onRegisterHookHandler, onRequestAsyncHookHandler, onRequestHookHandler, onResponseAsyncHookHandler, onResponseHookHandler, onRouteHookHandler, onSendAsyncHookHandler, onSendHookHandler, onTimeoutAsyncHookHandler, onTimeoutHookHandler, preHandlerAsyncHookHandler, preHandlerHookHandler, preParsingAsyncHookHandler, preParsingHookHandler, preSerializationAsyncHookHandler, preSerializationHookHandler, preValidationAsyncHookHandler, preValidationHookHandler, onRequestAbortHookHandler, onRequestAbortAsyncHookHandler, preCloseAsyncHookHandler, preCloseHookHandler, // './types/hooks'
+     FastifyServerFactory, FastifyServerFactoryHandler, // './types/serverFactory'
+-    FastifyTypeProvider, FastifyTypeProviderDefault, // './types/type-provider'
++    FastifyTypeProvider, FastifyTypeProviderDefault, SafePromiseLike, // './types/type-provider'
+     FastifyErrorCodes, // './types/errors'
+   }
+   // named export
+@@ -211,7 +211,7 @@ declare function fastify<
+   Reply extends RawReplyDefaultExpression<Server> = RawReplyDefaultExpression<Server>,
+   Logger extends FastifyBaseLogger = FastifyBaseLogger,
+   TypeProvider extends FastifyTypeProvider = FastifyTypeProviderDefault,
+->(opts: fastify.FastifyHttp2SecureOptions<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & PromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
++>(opts: fastify.FastifyHttp2SecureOptions<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & SafePromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
+ 
+ declare function fastify<
+   Server extends http2.Http2Server,
+@@ -219,7 +219,7 @@ declare function fastify<
+   Reply extends RawReplyDefaultExpression<Server> = RawReplyDefaultExpression<Server>,
+   Logger extends FastifyBaseLogger = FastifyBaseLogger,
+   TypeProvider extends FastifyTypeProvider = FastifyTypeProviderDefault,
+->(opts: fastify.FastifyHttp2Options<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & PromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
++>(opts: fastify.FastifyHttp2Options<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & SafePromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
+ 
+ declare function fastify<
+   Server extends https.Server,
+@@ -227,7 +227,7 @@ declare function fastify<
+   Reply extends RawReplyDefaultExpression<Server> = RawReplyDefaultExpression<Server>,
+   Logger extends FastifyBaseLogger = FastifyBaseLogger,
+   TypeProvider extends FastifyTypeProvider = FastifyTypeProviderDefault,
+->(opts: fastify.FastifyHttpsOptions<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & PromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
++>(opts: fastify.FastifyHttpsOptions<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & SafePromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
+ 
+ declare function fastify<
+   Server extends http.Server,
+@@ -235,7 +235,7 @@ declare function fastify<
+   Reply extends RawReplyDefaultExpression<Server> = RawReplyDefaultExpression<Server>,
+   Logger extends FastifyBaseLogger = FastifyBaseLogger,
+   TypeProvider extends FastifyTypeProvider = FastifyTypeProviderDefault,
+->(opts?: fastify.FastifyHttpOptions<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & PromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
++>(opts?: fastify.FastifyHttpOptions<Server, Logger>): FastifyInstance<Server, Request, Reply, Logger, TypeProvider> & SafePromiseLike<FastifyInstance<Server, Request, Reply, Logger, TypeProvider>>
+ 
+ // CJS export
+ // const fastify = require('fastify')
+diff --git a/node_modules/fastify/types/instance.d.ts b/node_modules/fastify/types/instance.d.ts
+index cc770da..0e8443d 100644
+--- a/node_modules/fastify/types/instance.d.ts
++++ b/node_modules/fastify/types/instance.d.ts
+@@ -19,7 +19,8 @@ import {
+ } from './schema'
+ import {
+   FastifyTypeProvider,
+-  FastifyTypeProviderDefault
++  FastifyTypeProviderDefault,
++  SafePromiseLike
+ } from './type-provider'
+ import { ContextConfigDefault, HTTPMethods, RawReplyDefaultExpression, RawRequestDefaultExpression, RawServerBase, RawServerDefault } from './utils'
+ 
+@@ -137,7 +138,7 @@ export interface FastifyInstance<
+   getSchema(schemaId: string): unknown;
+   getSchemas(): Record<string, unknown>;
+ 
+-  after(): FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider> & PromiseLike<undefined>;
++  after(): FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider> & SafePromiseLike<undefined>;
+   after(afterListener: (err: Error | null) => void): FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider>;
+ 
+   close(): Promise<undefined>;
+@@ -190,10 +191,10 @@ export interface FastifyInstance<
+    */
+   listen(port: number | string, address?: string, backlog?: number): Promise<string>;
+ 
+-  ready(): FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider> & PromiseLike<undefined>;
++  ready(): FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider> & SafePromiseLike<undefined>;
+   ready(readyListener: (err: Error | null) => void): FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider>;
+ 
+-  register: FastifyRegister<FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider> & PromiseLike<undefined>>;
++  register: FastifyRegister<FastifyInstance<RawServer, RawRequest, RawReply, Logger, TypeProvider> & SafePromiseLike<undefined>>;
+ 
+   routing(req: RawRequest, res: RawReply): void;
+   getDefaultRoute(): DefaultRoute<RawRequest, RawReply>;
+diff --git a/node_modules/fastify/types/schema.d.ts b/node_modules/fastify/types/schema.d.ts
+index fc01ac0..f5ef8f9 100644
+--- a/node_modules/fastify/types/schema.d.ts
++++ b/node_modules/fastify/types/schema.d.ts
+@@ -1,6 +1,6 @@
+ import { ValidatorFactory } from '@fastify/ajv-compiler'
+ import { SerializerFactory } from '@fastify/fast-json-stringify-compiler'
+-import { FastifyInstance } from '../fastify'
++import { FastifyInstance, SafePromiseLike } from '../fastify'
+ /**
+  * Schemas in Fastify follow the JSON-Schema standard. For this reason
+  * we have opted to not ship strict schema based types. Instead we provide
+@@ -33,7 +33,7 @@ export interface FastifySchemaValidationError {
+ }
+ 
+ export interface FastifyValidationResult {
+-  (data: any): boolean | PromiseLike<any> | { error?: Error, value?: any }
++  (data: any): boolean | SafePromiseLike<any> | { error?: Error, value?: any }
+   errors?: FastifySchemaValidationError[] | null;
+ }
+ 
+diff --git a/node_modules/fastify/types/type-provider.d.ts b/node_modules/fastify/types/type-provider.d.ts
+index 85de144..90739e7 100644
+--- a/node_modules/fastify/types/type-provider.d.ts
++++ b/node_modules/fastify/types/type-provider.d.ts
+@@ -93,3 +93,12 @@ RouteGeneric
+ // review: support both async and sync return types
+ // (Promise<Return> | Return | Promise<void> | void)
+   : unknown
++
++/**
++ * This branded type is needed to indicate APIs that return Promise-likes which can
++ * safely "float" (not have rejections handled by calling code).
++ *
++ * Please refer to the following Github issue for more info:
++ * https://github.com/fastify/fastify/issues/5498
++ */
++export type SafePromiseLike<T> = PromiseLike<T> & { __linterBrands: 'SafePromiseLike' }

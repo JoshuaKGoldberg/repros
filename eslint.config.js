@@ -17,7 +17,7 @@ export default tseslint.config(
         {
           allowForKnownSafePromises: [
             { from: "package", name: "FastifyReply", package: "fastify" },
-            // { from: "package", name: "SafePromiseLike", package: "fastify" },
+            { from: "package", name: "SafePromiseLike", package: "fastify" },
           ],
         },
       ],

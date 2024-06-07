@@ -11,3 +11,7 @@ fastify.get("/", (_, reply) => {
   // Return type: FastifyReply
   reply.send("OK");
 });
+
+// Should be allowed from the FastifyReply entry, but:
+// https://github.com/typescript-eslint/typescript-eslint/issues/9303
+fastify.register(() => {});

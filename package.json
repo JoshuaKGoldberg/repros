@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "next-i18next": "^15.3.0"
+  },
+  "devDependencies": {
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.9",
+    "eslint": "^9.6.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "rc-v8"
+  },
+  "scripts": {
+    "lint": "eslint index.tsx"
+  },
+  "type": "module"
+}

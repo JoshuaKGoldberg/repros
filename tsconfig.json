@@ -1,0 +1,7 @@
+{
+    "compilerOptions": {
+        "jsx": "preserve",
+        "moduleResolution": "NodeNext",
+        "strictNullChecks": true
+    }
+}

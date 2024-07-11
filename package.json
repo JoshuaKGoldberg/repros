@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "cases/*"
+  ],
+  "scripts": {
+    "comparison": "node --import tsx/esm src/index.ts",
+    "comparison:watch": "node --import tsx/esm --watch src/index.ts"
+  },
+  "lint-staged": {
+    "*": "prettier --ignore-unknown --write"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.6.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.10",
+    "eslint": "^9.6.0",
+    "execa": "^9.3.0",
+    "prettier": "^3.3.2",
+    "tsx": "^4.16.2",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.16.0"
+  },
+  "packageManager": "yarn@4.3.1"
+}

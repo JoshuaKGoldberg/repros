@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "not-a-log": "1.0.1",
+    "vitest": "2.0.2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "vitest"
+  },
+  "type": "module"
+}

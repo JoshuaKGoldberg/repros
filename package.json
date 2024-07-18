@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.14.11",
+    "eslint": "^9.7.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.0-alpha.44"
+  },
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "type": "module"
+}

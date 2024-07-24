@@ -1,0 +1,30 @@
+diff --git a/node_modules/@typescript-eslint/parser/dist/parser.js b/node_modules/@typescript-eslint/parser/dist/parser.js
+index ff2f2d5..34952d4 100644
+--- a/node_modules/@typescript-eslint/parser/dist/parser.js
++++ b/node_modules/@typescript-eslint/parser/dist/parser.js
+@@ -124,12 +124,22 @@ function parseForESLint(code, parserOptions) {
+             log('Resolved jsxFragmentName from program: %s', analyzeOptions.jsxFragmentName);
+         }
+     }
+-    const scopeManager = (0, scope_manager_1.analyze)(ast, analyzeOptions);
+     // if not defined - override from the parserOptions
+     services.emitDecoratorMetadata ??=
+         parserOptions.emitDecoratorMetadata === true;
+     services.experimentalDecorators ??=
+         parserOptions.experimentalDecorators === true;
+-    return { ast, services, scopeManager, visitorKeys: visitor_keys_1.visitorKeys };
++
++    let scopeManager = process.env.DEFERRED_ANALYSIS
++        ? undefined
++        : scope_manager_1.analyze(ast, analyzeOptions);
++
++    return {
++        ast, services, 
++        get scopeManager() {
++            return scopeManager ??= scope_manager_1.analyze(ast, analyzeOptions);
++        },
++        visitorKeys: visitor_keys_1.visitorKeys
++    };
+ }
+ //# sourceMappingURL=parser.js.map
+\ No newline at end of file

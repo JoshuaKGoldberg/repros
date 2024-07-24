@@ -1,0 +1,133 @@
+diff --git a/node_modules/eslint/lib/languages/js/index.js b/node_modules/eslint/lib/languages/js/index.js
+index f8c3ae6..a75259c 100644
+--- a/node_modules/eslint/lib/languages/js/index.js
++++ b/node_modules/eslint/lib/languages/js/index.js
+@@ -192,7 +192,6 @@ module.exports = {
+                 ast,
+                 services: parserServices = {},
+                 visitorKeys = evk.KEYS,
+-                scopeManager
+             } = parseResult;
+ 
+             return {
+@@ -200,7 +199,9 @@ module.exports = {
+                 ast,
+                 parserServices,
+                 visitorKeys,
+-                scopeManager
++                get scopeManager() {
++                    return parseResult.scopeManager;
++                }
+             };
+         } catch (ex) {
+ 
+@@ -234,17 +235,22 @@ module.exports = {
+         const { body: text, path: filePath, bom: hasBOM } = file;
+         const { ast, parserServices, visitorKeys } = parseResult;
+ 
+-        debug("Scope analysis:", filePath);
+-        const scopeManager = parseResult.scopeManager || analyzeScope(ast, languageOptions, visitorKeys);
+-
+-        debug("Scope analysis successful:", filePath);
++        let scopeManager;
+ 
+         return new SourceCode({
+             text,
+             ast,
+             hasBOM,
+             parserServices,
+-            scopeManager,
++            get scopeManager() {
++                if (!scopeManager) {
++                    debug("Scope analysis:", filePath);
++                    scopeManager == parseResult.scopeManager || analyzeScope(ast, languageOptions, visitorKeys);
++                    debug("Scope analysis successful:", filePath);
++                }
++
++                return scopeManager;
++            },
+             visitorKeys
+         });
+     }
+diff --git a/node_modules/eslint/lib/languages/js/source-code/source-code.js b/node_modules/eslint/lib/languages/js/source-code/source-code.js
+index 7baf2ea..80679e8 100644
+--- a/node_modules/eslint/lib/languages/js/source-code/source-code.js
++++ b/node_modules/eslint/lib/languages/js/source-code/source-code.js
+@@ -444,6 +444,30 @@ class SourceCode extends TokenStore {
+      */
+     #steps;
+ 
++    #createdScopeManager = false;
++
++    get scopeManager() {
++        if (this.#createdScopeManager || !this.textOrConfig) {
++            return this.textOrConfig?.scopeManager;
++        }
++
++        const { scopeManager } = this.textOrConfig;
++
++        const varsCache = this[caches].get("vars");
++        const configGlobals = varsCache.get("configGlobals");
++        const inlineGlobals = varsCache.get("inlineGlobals");
++        const exportedVariables = varsCache.get("exportedVariables");
++        const globalScope = scopeManager.scopes[0];
++
++        addDeclaredGlobals(globalScope, configGlobals, inlineGlobals);
++
++        if (exportedVariables) {
++            markExportedVariables(globalScope, exportedVariables);
++        }
++
++        return scopeManager;
++    }
++
+     /**
+      * Creates a new instance.
+      * @param {string|Object} textOrConfig The source code text or config object.
+@@ -468,13 +492,14 @@ class SourceCode extends TokenStore {
+             ast = textOrConfig.ast;
+             hasBOM = textOrConfig.hasBOM;
+             parserServices = textOrConfig.parserServices;
+-            scopeManager = textOrConfig.scopeManager;
+             visitorKeys = textOrConfig.visitorKeys;
+         }
+ 
+         validate(ast);
+         super(ast.tokens, ast.comments);
+ 
++        this.textOrConfig = textOrConfig;
++
+         /**
+          * General purpose caching for the class.
+          */
+@@ -530,12 +555,6 @@ class SourceCode extends TokenStore {
+          */
+         this.parserServices = parserServices || {};
+ 
+-        /**
+-         * The scope of this source code.
+-         * @type {ScopeManager|null}
+-         */
+-        this.scopeManager = scopeManager || null;
+-
+         /**
+          * The visitor keys to traverse AST.
+          * @type {Object}
+@@ -1197,17 +1216,6 @@ class SourceCode extends TokenStore {
+      */
+     finalize() {
+ 
+-        const varsCache = this[caches].get("vars");
+-        const configGlobals = varsCache.get("configGlobals");
+-        const inlineGlobals = varsCache.get("inlineGlobals");
+-        const exportedVariables = varsCache.get("exportedVariables");
+-        const globalScope = this.scopeManager.scopes[0];
+-
+-        addDeclaredGlobals(globalScope, configGlobals, inlineGlobals);
+-
+-        if (exportedVariables) {
+-            markExportedVariables(globalScope, exportedVariables);
+-        }
+ 
+     }
+ 

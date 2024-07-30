@@ -1,0 +1,15 @@
+diff --git a/node_modules/@typescript-eslint/rule-tester/dist/RuleTester.js b/node_modules/@typescript-eslint/rule-tester/dist/RuleTester.js
+index 0901ed4..262eafc 100644
+--- a/node_modules/@typescript-eslint/rule-tester/dist/RuleTester.js
++++ b/node_modules/@typescript-eslint/rule-tester/dist/RuleTester.js
+@@ -509,6 +509,10 @@ class RuleTester extends TestFramework_1.TestFramework {
+                 });
+                 const actualConfig = (0, lodash_merge_1.default)(configWithoutCustomKeys, {
+                     linterOptions: { reportUnusedDisableDirectives: 1 },
++                    language: require(node_path_1.default.join(
++                        node_path_1.default.dirname(require.resolve("eslint")),
++                        "languages/js/index.js")
++                    ),
+                     languageOptions: {
+                         ...configWithoutCustomKeys.languageOptions,
+                         parserOptions: {

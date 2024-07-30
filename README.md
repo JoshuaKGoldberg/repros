@@ -36,3 +36,5 @@ TypeError: Cannot read properties of undefined (reading 'parse')
  ❯ RuleTester.#testInvalidTemplate node_modules/@typescript-eslint/rule-tester/src/RuleTester.ts:862:25
  ❯ node_modules/@typescript-eslint/rule-tester/src/RuleTester.ts:513:40
 ```
+
+Applying the patch in `patches/@typescript-eslint+rule-tester+8.0.0-alpha.59.patch` makes the tests pass again.

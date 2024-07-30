@@ -15,7 +15,7 @@ const ruleTester = new RuleTester({
     parser: tseslint.parser,
     parserOptions: {
       projectService: {
-        allowDefaultProject: ["file.ts"],
+        allowDefaultProject: [path.resolve("file.ts")],
         defaultProject: "tsconfig.json",
       },
       tsconfigRootDir: path.join(import.meta.dirname, ".."),

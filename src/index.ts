@@ -10,7 +10,7 @@ const casesPath = "cases";
 const caseEntries = [
   {
     label: "files",
-    values: [165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175],
+    values: [100, 150, 165, 170, 175, 200, 250, 300],
   },
   {
     label: "types",

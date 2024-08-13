@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^9.9.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.1.0"
+  }
+}

@@ -1,0 +1,150 @@
+diff --git a/node_modules/eslint/lib/linter/linter.js b/node_modules/eslint/lib/linter/linter.js
+index e5d4d2c..7172efd 100644
+--- a/node_modules/eslint/lib/linter/linter.js
++++ b/node_modules/eslint/lib/linter/linter.js
+@@ -1003,8 +1003,9 @@ function createRuleListeners(rule, ruleContext) {
+ function runRules(
+     sourceCode, configuredRules, ruleMapper, parserName, language, languageOptions,
+     settings, filename, disableFixes, cwd, physicalFilename, ruleFilter,
+-    stats, slots
++    stats, slots, previousMessages
+ ) {
++    console.log("[runRules]")
+     const emitter = createEmitter();
+ 
+     // must happen first to assign all node.parent properties
+@@ -1035,8 +1036,19 @@ function runRules(
+     );
+ 
+     const lintingProblems = [];
++    let configuredRuleKeys = Object.keys(configuredRules);
+ 
+-    Object.keys(configuredRules).forEach(ruleId => {
++    if (process.env.ESLINT_POC_OPTIMIZE_RERUNS && previousMessages?.some(message => message.ruleId.startsWith("@stylistic/"))) {
++        configuredRuleKeys = [
++            ...configuredRuleKeys.filter(key => key.startsWith("@stylistic/")),
++            ...configuredRuleKeys.filter(key => !key.startsWith("@stylistic/")),
++        ]
++    }
++
++    /** @type {string | undefined} */
++    let previousGroupWithReport;
++
++    configuredRuleKeys.forEach(ruleId => {
+         const severity = ConfigOps.getRuleSeverity(configuredRules[ruleId]);
+ 
+         // not load disabled rules
+@@ -1055,6 +1067,7 @@ function runRules(
+             return;
+         }
+ 
++        const ruleGroup = ruleId.split("/")[0];
+         const messageIds = rule.meta && rule.meta.messages;
+         let reportTranslator = null;
+         const ruleContext = Object.freeze(
+@@ -1064,6 +1077,7 @@ function runRules(
+                     id: ruleId,
+                     options: getRuleOptions(configuredRules[ruleId]),
+                     report(...args) {
++                        previousGroupWithReport = ruleGroup;
+ 
+                         /*
+                          * Create a report translator lazily.
+@@ -1141,14 +1155,32 @@ function runRules(
+             throw new Error(`The create() function for rule '${ruleId}' did not return an object.`);
+         }
+ 
++        /** @type {string | undefined} */
++        let loggedRuleGroups = new Set();
++
+         // add all the selectors from the rule as listeners
+         Object.keys(ruleListeners).forEach(selector => {
+             const ruleListener = (timing.enabled || stats)
+                 ? timing.time(ruleId, ruleListeners[selector], stats) : ruleListeners[selector];
+ 
++            const ruleListenerWithErrorHandler = addRuleErrorHandler(ruleListener);
+             emitter.on(
+                 selector,
+-                addRuleErrorHandler(ruleListener)
++                (...args) => {
++                    if (
++                        process.env.ESLINT_POC_OPTIMIZE_RERUNS &&
++                        previousGroupWithReport &&
++                        previousGroupWithReport !== ruleGroup &&
++                        (process.env.ESLINT_POC_OPTIMIZE_RERUNS === 'FULL' || previousMessages)
++                    ) {
++                        return;
++                    }
++
++                    if (!loggedRuleGroups.has(ruleGroup)) {
++                        loggedRuleGroups.add(ruleGroup)
++                    }
++                    ruleListenerWithErrorHandler(...args);
++                }
+             );
+         });
+     });
+@@ -1517,7 +1549,7 @@ class Linter {
+      *      an object, then it has "filename", "allowInlineConfig", and some properties.
+      * @returns {LintMessage[]} The results as an array of messages or an empty array if no messages.
+      */
+-    verify(textOrSourceCode, config, filenameOrOptions) {
++    verify(textOrSourceCode, config, filenameOrOptions, previousMessages) {
+         debug("Verify");
+ 
+         const { configType, cwd } = internalSlotsMap.get(this);
+@@ -1544,7 +1576,7 @@ class Linter {
+                 configArray.normalizeSync();
+             }
+ 
+-            return this._distinguishSuppressedMessages(this._verifyWithFlatConfigArray(textOrSourceCode, configArray, options, true));
++            return this._distinguishSuppressedMessages(this._verifyWithFlatConfigArray(textOrSourceCode, configArray, options, true, previousMessages));
+         }
+ 
+         if (typeof configToUse.extractConfig === "function") {
+@@ -1656,7 +1688,7 @@ class Linter {
+      * @throws {Error} If during rule execution.
+      * @returns {(LintMessage|SuppressedLintMessage)[]} The results as an array of messages or an empty array if no messages.
+      */
+-    _verifyWithFlatConfigArrayAndWithoutProcessors(textOrSourceCode, providedConfig, providedOptions) {
++    _verifyWithFlatConfigArrayAndWithoutProcessors(textOrSourceCode, providedConfig, providedOptions, previousMessages) {
+         const slots = internalSlotsMap.get(this);
+         const config = providedConfig || {};
+         const options = normalizeVerifyOptions(providedOptions, config);
+@@ -1958,7 +1990,8 @@ class Linter {
+                 providedOptions.physicalFilename,
+                 options.ruleFilter,
+                 options.stats,
+-                slots
++                slots,
++                previousMessages
+             );
+         } catch (err) {
+             err.message += `\nOccurred while linting ${options.filename}`;
+@@ -2041,7 +2074,7 @@ class Linter {
+      *      from verify(). (TODO: Remove once eslintrc is removed.)
+      * @returns {(LintMessage|SuppressedLintMessage)[]} The found problems.
+      */
+-    _verifyWithFlatConfigArray(textOrSourceCode, configArray, options, firstCall = false) {
++    _verifyWithFlatConfigArray(textOrSourceCode, configArray, options, firstCall = false, previousMessages) {
+         debug("With flat config: %s", options.filename);
+ 
+         // we need a filename to match configs against
+@@ -2083,7 +2116,7 @@ class Linter {
+             return this._verifyWithFlatConfigArrayAndProcessor(textOrSourceCode, config, options);
+         }
+ 
+-        return this._verifyWithFlatConfigArrayAndWithoutProcessors(textOrSourceCode, config, options);
++        return this._verifyWithFlatConfigArrayAndWithoutProcessors(textOrSourceCode, config, options, previousMessages);
+     }
+ 
+     /**
+@@ -2320,7 +2353,7 @@ class Linter {
+             }
+ 
+             debug(`Linting code for ${debugTextDescription} (pass ${passNumber})`);
+-            messages = this.verify(currentText, config, options);
++            messages = this.verify(currentText, config, options, messages);
+ 
+             debug(`Generating fixed text for ${debugTextDescription} (pass ${passNumber})`);
+             let t;

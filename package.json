@@ -1,0 +1,20 @@
+{
+  "name": "repros",
+  "version": "1.0.0",
+  "description": "Reproduction cases for open source issues I find online. See [branches](https://github.com/JoshuaKGoldberg/repros/branches).",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint index.ts",
+    "tsc": "tsc index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^9.9.0",
+    "eslint-plugin-perfectionist": "^3.2.0",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0"
+  },
+  "type": "module"
+}

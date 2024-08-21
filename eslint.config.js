@@ -6,7 +6,7 @@ export default tseslint.config({
   languageOptions: {
     parser: tseslint.parser,
     parserOptions: {
-      project: true,
+      projectService: true,
       jsDocParsingMode: "none",
       sourceType: "module",
     },

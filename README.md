@@ -7,10 +7,11 @@ npm i
 npm run lint
 ```
 
+This report is what should happen:
+
 ```plaintext
 /Users/josh/repos/repros/baz.ts
   3:10  error  Cannot import a package-private export 'fooPackageVariable'  import-access/jsdoc
 ```
 
-That rule report is expected and good.
-It happens even with `parserOptions.jsDocParsingMode` set to `"none"`.
+...but doesn't.

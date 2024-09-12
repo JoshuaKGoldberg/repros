@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "eslint": "^9.10.0",
+    "eslint-plugin-expect-type": "^0.4.2",
+    "typescript": "5.5.2",
+    "typescript-eslint": "^8.5.0"
+  },
+  "scripts": {
+    "lint:flat": "eslint index.ts",
+    "lint:legacy": "eslint index.ts --config .eslintrc.json"
+  },
+  "type": "module"
+}

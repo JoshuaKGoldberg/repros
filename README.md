@@ -1,4 +1,14 @@
-# Repros
+# Repro: `eslint-plugin-expect-type` and ESLint configs
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+```shell
+npm i
+npm run lint:flat
+npm run lint:legacy
+```
+
+Both lint commands should output:
+
+```plaintext
+/Users/josh/repos/repros/index.ts
+  2:1  error  Expected type to be: number, got: 9001  expect-type/expect
+```

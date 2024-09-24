@@ -1,4 +1,11 @@
-# Repros
+# Repro: typescript-eslint allowDefaultProject mismatched with ESLint config
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+```shell
+npm i
+npm run lint
+```
+
+```shell
+/Users/josh/repos/repros/eslint.config.mjs
+  0:0  error  Parsing error: /Users/josh/repos/repros/eslint.config.mjs was not found by the project service. Consider either including it in the tsconfig.json or including it in allowDefaultProject
+```

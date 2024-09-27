@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@typescript-eslint/scope-manager": "^8.7.0",
+    "typescript": "^4.8.4"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  }
+}

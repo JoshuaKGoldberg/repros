@@ -1,0 +1,1 @@
+import * as sm from "@typescript-eslint/scope-manager";

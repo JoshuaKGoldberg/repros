@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "eslint": "^9.14.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.13.0"
+  },
+  "license": "MIT",
+  "name": "repros",
+  "packageManager": "yarn@4.5.1"
+}

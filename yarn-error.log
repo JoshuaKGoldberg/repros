@@ -1,0 +1,31 @@
+Arguments: 
+  /Users/josh/.nvm/versions/node/v22.4.1/bin/node /Users/josh/.yarn/bin/yarn.js set version 4
+
+PATH: 
+  /Users/josh/.yarn/bin:/Users/josh/.config/yarn/global/node_modules/.bin:/Users/josh/.nvm/versions/node/v22.4.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Library/Apple/usr/bin:/Users/josh/Library/pnpm:/Users/josh/.yarn/bin:/Users/josh/.config/yarn/global/node_modules/.bin:/Users/josh/.nvm/versions/node/v22.4.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  22.4.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: Release not found: 4
+      at /Users/josh/.yarn/lib/cli.js:86358:17
+      at Generator.next (<anonymous>)
+      at step (/Users/josh/.yarn/lib/cli.js:310:30)
+      at /Users/josh/.yarn/lib/cli.js:321:13
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

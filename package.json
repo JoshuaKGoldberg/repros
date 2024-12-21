@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "octokit": "^4.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "type": "module"
+}

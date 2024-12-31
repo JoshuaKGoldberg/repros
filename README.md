@@ -1,4 +1,8 @@
-# Repros
+# Repro: `all-contributors-cli add` adding redundant `.all-contributorsrc` field defaults
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+Reproduction showing the `commitConvention` and `repoType` properties added to the `.all-contributorsrc` file when `all-contributors-cli` is run.
+
+```shell
+npm i
+npx all-contributors-cli add JoshuaKGoldberg doc
+```

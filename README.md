@@ -8,8 +8,8 @@ npm i
 
 Then in two terminals, run:
 
-* `npx mocha "*.test.js" --watch
-* `node /path/to/your/local/mocha/bin/mocha.js "*.test.js" --watch
+* `npx mocha "*.test.js" --watch`
+* `node /path/to/your/local/mocha/bin/mocha.js "*.test.js" --watch`
 
 Both of those should show `a` and `b` passing.
 

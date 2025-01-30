@@ -1,0 +1,13 @@
+{
+  "name": "repro-mocha-missing-module-cyclic",
+  "version": "1.0.0",
+  "description": " Repro: Mocha reporting a cyclic import for missing module.",
+  "scripts": {
+    "test": "mocha"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^11.1.0"
+  },
+  "type": "module"
+}

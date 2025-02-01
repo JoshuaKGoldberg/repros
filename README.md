@@ -1,4 +1,11 @@
-# Repros
+# Repro: typescript-eslint Getting Started config without `...`
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+```shell
+npm i
+npm run lint
+```
+
+```plaintext
+/Users/josh/repos/repros/index.ts
+  1:1  error  Unexpected var, use let or const instead  no-var
+```

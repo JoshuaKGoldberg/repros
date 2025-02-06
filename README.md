@@ -1,4 +1,6 @@
-# Repros
+# Repro: Mocha on Windows 11 with `got`
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+```shell
+npm i
+npx mocha
+```

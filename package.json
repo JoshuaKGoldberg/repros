@@ -1,0 +1,13 @@
+{
+  "name": "eslint-flat-config-empty-parse",
+  "version": "1.0.0",
+  "description": "Providing ESLint's flat config with a parser that does nothing.",
+  "scripts": {
+    "lint": "eslint index.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "eslint": "^9.20.1"
+  },
+  "type": "module"
+}

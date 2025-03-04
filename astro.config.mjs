@@ -14,23 +14,20 @@ export default defineConfig({
 			},
 			plugins: [
 				starlightBlog(),
-				starlightSidebarTopics([
-					{
-						id: 'guides',
-						icon: 'open-book',
-						label: 'Guides',
-						link: '/guides/',
-						items: [
-							{ label: 'Example Guide', slug: 'guides/example' },
-						],
-					},
-					{
-						icon: 'information',
-						items: ['reference/example'],
-						label: 'Reference',
-						link: '/reference/',
-					},
-				]),
+				starlightBlog({
+					prefix: "guides",
+					title: "Guides"
+				}),
+				starlightSidebarTopics(
+					[
+						{
+							icon: 'information',
+							items: ['reference/example'],
+							label: 'Reference',
+							link: '/reference/',
+						},
+					],
+					{ exclude: ["/blog", "/blog/**/*", "/guides", "/guides/**/*"] }),
 			],
 		}),
 	],

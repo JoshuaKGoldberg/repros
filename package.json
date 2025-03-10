@@ -1,0 +1,10 @@
+{
+  "name": "repros",
+  "scripts": {
+    "example": "yarn --mode skip-build"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "knip": "^5.45.0"
+  }
+}

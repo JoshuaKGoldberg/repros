@@ -1,0 +1,10 @@
+name: Example Workflow
+
+jobs:
+  example_job:
+    name: Example Job
+    runs-on: ubuntu-latest
+    steps:
+      - run: yarn --mode skip-build
+on:
+  pull_request: ~

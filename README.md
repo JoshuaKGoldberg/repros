@@ -1,4 +1,13 @@
-# Repros
+# Prettier Plugin With Only `printers` Not Applying
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+An attempt to create a plugin that exports a `printers` object with language-specific `print` functions.
+
+```shell
+npm i
+npm run format
+```
+
+```plaintext
+Loaded plugin.js.
+index.ts 20ms (unchanged)
+```

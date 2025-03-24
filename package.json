@@ -1,0 +1,14 @@
+{
+  "name": "repros",
+  "version": "1.0.0",
+  "description": "Reproduction cases for open source issues I find online. See [branches](https://github.com/JoshuaKGoldberg/repros/branches).",
+  "scripts": {
+    "format": "prettier index.ts --write"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.5.3",
+    "prettier-plugin-curly": "^0.3.1"
+  },
+  "type": "module"
+}

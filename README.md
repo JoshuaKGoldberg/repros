@@ -4,8 +4,8 @@ Reproduction of [Biome's `noFloatingPromises`](https://next.biomejs.dev/linter/r
 Specifically, a conditionally remapped key in a mapped type.
 
 ```shell
-npm i
-npm lint
+npm install
+npm run lint
 ```
 
 There should be two floating promises detected.

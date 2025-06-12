@@ -8,10 +8,7 @@ type LazyGetters<T> = {
 
 declare const lazyFruits: LazyGetters<Fruits>;
 
-async function getApple() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  return "apple";
-}
+declare function getApple(): Promise<string>;
 
 export function main() {
   // Should be lint complaint for a floating Promise

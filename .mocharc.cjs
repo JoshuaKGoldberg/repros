@@ -4,6 +4,6 @@ process.env.TS_NODE_PROJECT = __dirname + "/test/tsconfig.json";
 module.exports = {
   require: ["@swc-node/register/esm-register"],
   extension: ["ts"],
-  spec: "./test/**/*.spec.ts",
+  spec: "./*.spec.ts",
   timeout: 30000,
 };

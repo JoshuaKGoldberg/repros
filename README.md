@@ -1,4 +1,10 @@
-# Repros
+# Repro: `dedent` and Unicode Characters
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+```shell
+npm i
+node index.js
+```
+
+```plaintext
+{ test: '😊' }
+```

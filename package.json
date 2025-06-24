@@ -1,0 +1,11 @@
+{
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaKGoldberg/repros.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "dedent": "^1.6.0"
+  }
+}

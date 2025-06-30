@@ -1,0 +1,7 @@
+.apply-variable {
+  --colorForeground: rebeccapurple;
+}
+
+p {
+  color: var(--colorForeground);
+}

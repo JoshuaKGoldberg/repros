@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "dependencies": {
+        "yaml-unist-parser": "^2.0.5"
+    }
+}

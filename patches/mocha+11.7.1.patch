@@ -1,0 +1,17 @@
+diff --git a/node_modules/mocha/lib/reporters/base.js b/node_modules/mocha/lib/reporters/base.js
+index e0ca5f4..71b2b2a 100644
+--- a/node_modules/mocha/lib/reporters/base.js
++++ b/node_modules/mocha/lib/reporters/base.js
+@@ -313,7 +313,11 @@ exports.list = function (failures) {
+       stringifyDiffObjs(err);
+       fmt =
+         color('error title', '  %s) %s:\n%s') + color('error stack', '\n%s\n');
+-      var match = message.match(/^([^:]+): expected/);
++      var matchOld = message.match(/^([^:]+): expected/);
++      var matchNew = message.match(/^(.+): expected/);
++      // console.log({ matchOld, matchNew })
++      const match = process.env.NEW_BEHAVIOR ? matchNew : matchOld;
++
+       msg = '\n      ' + color('error message', match ? match[1] : msg);
+ 
+       msg += generateDiff(err.actual, err.expected);

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "ts-ast-to-literal": "^4.0.0",
+    "typescript": "^5.8.3"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "type": "module"
+}

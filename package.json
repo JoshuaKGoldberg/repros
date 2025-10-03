@@ -1,0 +1,11 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "eslint": "JoshuaKGoldberg/eslint#01ca356fe1ec374ad67b59bf332ec4d47cf327df",
+    "globals": "16.4.0"
+  },
+  "scripts": {
+    "init": "node init.js",
+    "lint": "eslint ."
+  }
+}

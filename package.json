@@ -2,8 +2,11 @@
   "type": "module",
   "devDependencies": {
     "@eslint/js": "9.36.0",
+    "eslint-plugin-n": "^17.23.1",
+    "eslint-plugin-regexp": "^2.10.0",
     "eslint": "9.36.0",
-    "globals": "16.4.0"
+    "globals": "16.4.0",
+    "typescript-eslint": "^8.45.0"
   },
   "scripts": {
     "init": "node init.js",

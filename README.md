@@ -1,4 +1,4 @@
-# Comparison: Minimal ESLint usage with `empathic`
+# Comparison: ESLint & plugins usage with `empathic`
 
 ## Initialization
 
@@ -18,10 +18,10 @@ npm run init
 
 Taken on a Apple M1 Max 2022 Mac Mini with Node.js 24.3.0.
 
-| Metric                                | Before            | After     | Change       |
-| ------------------------------------- | ----------------- | --------- | ------------ |
-| `du -s node_modules`                  | 26696             | 26592     | -104 (0.39%) |
-| `hyperfine "npm run lint" --warmup 2` | 281.5 ms ± 2.9 ms | _(tbd\*)_ | _(tbd\*)_    |
+| Metric                                | Before             | After     | Change        |
+| ------------------------------------- | ------------------ | --------- | ------------- |
+| `du -s node_modules`                  | 107912             | 107808    | -104 (0.096%) |
+| `hyperfine "npm run lint" --warmup 2` | 715.6 ms ± 16.5 ms | _(tbd\*)_ | _(tbd\*)_     |
 
 \*I don't yet have a version of ESLint working with `empathic/find`:
 

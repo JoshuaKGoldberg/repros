@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@eslint/js": "9.36.0",
+    "eslint": "9.36.0",
+    "globals": "16.4.0"
+  },
+  "scripts": {
+    "init": "node init.js",
+    "lint": "eslint ."
+  }
+}

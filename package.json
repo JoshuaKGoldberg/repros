@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "dependencies": {
+        "npm-user": "^6.1.1"
+    }
+}

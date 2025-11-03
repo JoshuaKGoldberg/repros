@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@typescript-eslint/scope-manager": "^8.46.3",
+    "@typescript-eslint/typescript-estree": "^8.46.3"
+  }
+}

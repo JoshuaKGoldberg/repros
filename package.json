@@ -1,0 +1,20 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "Straightforward example",
+  "scripts": {
+    "test:baseline": "npx mocha test.spec.js",
+    "test:both": "npx mocha test.spec.js --reporter reporter-esm.js --ui ui-esm.js",
+    "test:reporter": "npx mocha test.spec.js --reporter reporter-esm.js",
+    "test:ui": "npx mocha test.spec.js --ui ui-esm.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "mocha": "latest"
+  },
+  "type": "module"
+}

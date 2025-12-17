@@ -1,4 +1,6 @@
-# Repros
+# `eslint-plugin-sentences-per-line` Repro: Three Periods
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+```shell
+npm i
+npx eslint index.md --fix
+```

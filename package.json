@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "@eslint/markdown": "^7.5.1",
+    "eslint": "^9.39.2",
+    "eslint-plugin-sentences-per-line": "^0.1.0"
+  }
+}

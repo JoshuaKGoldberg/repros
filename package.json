@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "mocha": "github:mochajs/mocha#7f9ed1fb3480e0658c2c7d84c60a1b505c941ce5"
+  }
+}

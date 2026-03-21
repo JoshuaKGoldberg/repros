@@ -1,0 +1,11 @@
+---
+export interface Props {
+  happy?: boolean;
+}
+---
+
+<main>
+  <h1>
+    {Astro.props.happy ? "Hooray!" : "Good."}
+  </h1>
+</main>

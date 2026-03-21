@@ -1,0 +1,16 @@
+{
+  "name": "astro-knip-repro",
+  "type": "module",
+  "version": "0.0.1",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "knip": "knip"
+  },
+  "devDependencies": {
+    "astro": "^6.0.8",
+    "knip": "^6.0.1"
+  }
+}

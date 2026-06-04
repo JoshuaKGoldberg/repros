@@ -1,0 +1,14 @@
+{
+	"name": "repro-eslint-comments-require-cache",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"repro": "node repro.mjs",
+		"control": "node control.mjs"
+	},
+	"dependencies": {
+		"@eslint-community/eslint-plugin-eslint-comments": "4.7.0",
+		"eslint": "10.3.0"
+	}
+}

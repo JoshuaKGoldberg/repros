@@ -1,4 +1,3 @@
-# Repros
+# Mocha with GitHub Actions Reporter
 
-Reproduction cases for open source issues I find online.
-See [branches](https://github.com/JoshuaKGoldberg/repros/branches).
+Testing [mocha#6088 feat: add built-in github-actions reporter](https://github.com/mochajs/mocha/pull/6088).

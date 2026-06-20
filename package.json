@@ -1,0 +1,14 @@
+{
+  "name": "mocha-github-reporter",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha test.spec.js --reporter github-actions"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "github:mostafaNazari702/mocha#591c078a417ec83a8ee94741255c6ec032c9b248"
+  }
+}

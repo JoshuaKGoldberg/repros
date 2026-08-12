@@ -1,0 +1,20 @@
+{
+  "name": "jest-dom-aria-valuenow-repro",
+  "version": "1.0.0",
+  "description": "Repro: jest-dom toHaveValue() does not read aria-valuenow for role=separator or role=scrollbar",
+  "scripts": {
+    "build:browser": "esbuild runtime-browser.mjs --bundle --format=iife --platform=browser --outfile=runtime-browser.js",
+    "runtime:browser": "open runtime-browser.html",
+    "runtime:jsdom": "node runtime-jsdom.mjs"
+  },
+  "license": "ISC",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "console-table-without-index": "^0.1.1",
+    "esbuild": "^0.28.2",
+    "expect": "^30.4.1",
+    "jsdom": "^29.1.1"
+  }
+}

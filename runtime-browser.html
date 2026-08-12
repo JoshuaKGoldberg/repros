@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>jest-dom aria-valuenow: browser runtime check</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        margin: 2rem auto;
+        max-width: 60rem;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      td,
+      th {
+        border: 1px solid #999;
+        padding: 0.25rem 0.5rem;
+        text-align: left;
+      }
+      .fails {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Browser runtime check</h1>
+
+    <div role="meter" aria-label="Disk" aria-valuenow="120"></div>
+    <div role="progressbar" aria-label="Upload" aria-valuenow="120"></div>
+    <div role="scrollbar" aria-label="Scroll" aria-valuenow="120" aria-controls="panel" tabindex="0"></div>
+    <div role="separator" aria-label="Resize panels" aria-valuenow="120" tabindex="0"></div>
+    <div role="slider" aria-label="Volume" aria-valuenow="120" tabindex="0"></div>
+    <div role="spinbutton" aria-label="Quantity" aria-valuenow="120" tabindex="0"></div>
+
+    <div id="results">
+      <p>
+        No results yet. <code>runtime-browser.js</code> is a build artifact, so
+        run <code>npm run runtime:browser</code> to bundle it.
+      </p>
+    </div>
+
+    <script src="runtime-browser.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts axis tooltip: stale series index after replaceMerge</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        margin: 2rem auto;
+        max-width: 60rem;
+      }
+      #chart {
+        height: 300px;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Axis tooltip: stale series index after <code>replaceMerge</code></h1>
+
+    <p>
+      <code>repro.js</code> is a build artifact, so run
+      <code>npm run build</code> to bundle it.
+    </p>
+
+    <ol>
+      <li>Open the DevTools console.</li>
+      <li>Hover over the middle of the chart so the axis tooltip appears.</li>
+      <li>
+        Without moving the pointer off the chart, press <kbd>s</kbd> to
+        <code>setOption</code> the same option with the 5 series replaced by 1.
+      </li>
+    </ol>
+
+    <div id="chart"></div>
+
+    <script src="repro.js"></script>
+  </body>
+</html>

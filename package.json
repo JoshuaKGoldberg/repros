@@ -1,0 +1,18 @@
+{
+  "name": "echarts-tooltip-stale-series-index-repro",
+  "version": "1.0.0",
+  "description": "Repro: axis tooltip throwing on getDataParams when replaceMerge removes series while the pointer is over the chart",
+  "scripts": {
+    "build": "esbuild repro.mjs --bundle --format=iife --platform=browser --outfile=repro.js",
+    "repro:browser": "open repro.html",
+    "repro:headless": "node headless.mjs"
+  },
+  "license": "ISC",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "echarts": "6.1.0",
+    "esbuild": "^0.28.2",
+    "playwright": "^1.61.1"
+  }
+}

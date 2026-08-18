@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "strict": true,
+    "target": "es2022"
+  },
+  "include": ["apps/**/*.ts", "libs/**/*.ts"]
+}

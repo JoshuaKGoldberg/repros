@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "eslint": "^10.11.0",
+    "eslint-plugin-unicorn": "^76.0.0",
+    "prettier": "^3.9.9"
+  }
+}

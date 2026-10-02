@@ -1,0 +1,15 @@
+{
+	"name": "typescript-native-composite-default-project-panic",
+	"version": "0.0.0",
+	"description": "Repro: the TypeScript native API panics opening a file beside a composite project",
+	"scripts": {
+		"repro:composite": "node repro.js composite",
+		"repro:non-composite": "node repro.js non-composite"
+	},
+	"license": "MIT",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"typescript": "7.1.0-dev.20261001.1"
+	}
+}

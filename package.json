@@ -1,0 +1,15 @@
+{
+	"name": "pptx-svg-emoji-section-name",
+	"version": "0.0.0",
+	"description": "Repro: pptx-svg crashes loading a deck with an emoji in a section name",
+	"scripts": {
+		"repro": "node repro.mjs"
+	},
+	"license": "MIT",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"pptx-svg": "0.6.8",
+		"pptxgenjs": "4.0.1"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"name": "takumi-gif-device-pixel-ratio",
+	"version": "0.0.0",
+	"description": "Repro: takumi ignores devicePixelRatio for GIFs and other animated images",
+	"scripts": {
+		"repro": "node repro.mjs"
+	},
+	"license": "MIT",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"@takumi-rs/core": "2.20.0"
+	}
+}

@@ -1,0 +1,13 @@
+{
+  "name": "biome-js-api-windows-backslash-paths",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "repro": "node repro.mjs"
+  },
+  "dependencies": {
+    "@biomejs/biome": "2.6.8",
+    "@biomejs/js-api": "6.1.0",
+    "@biomejs/wasm-nodejs": "2.6.8"
+  }
+}

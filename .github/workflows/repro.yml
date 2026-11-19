@@ -14,6 +14,7 @@ jobs:
           node-version: 24
       - run: npm install
       - name: Apply formatly#755 to the installed formatly
+        shell: bash
         run: >-
           node -e "const fs = require('fs');
           const file = 'node_modules/formatly/lib/formatters/formatTextBiome.js';

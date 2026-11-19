@@ -1,0 +1,5 @@
+{
+  "files": { "includes": ["**", "!ignored/**"] },
+  "formatter": { "indentStyle": "space", "indentWidth": 2 },
+  "overrides": [{ "includes": ["src/**"], "formatter": { "indentWidth": 8 } }]
+}

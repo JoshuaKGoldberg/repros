@@ -13,4 +13,12 @@ jobs:
         with:
           node-version: 24
       - run: npm install
+      - name: Apply formatly#755 to the installed formatly
+        run: >-
+          node -e "const fs = require('fs');
+          const file = 'node_modules/formatly/lib/formatters/formatTextBiome.js';
+          const before = 'path.relative(directory, filePath);';
+          const text = fs.readFileSync(file, 'utf8');
+          if (!text.includes(before)) throw new Error('Patch target not found');
+          fs.writeFileSync(file, text.replace(before, 'path.relative(directory, filePath).replaceAll(path.sep, \"/\");'));"
       - run: npm run repro

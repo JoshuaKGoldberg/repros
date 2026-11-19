@@ -13,4 +13,5 @@ jobs:
         with:
           node-version: 24
       - run: npm install
+      - run: npx biome rage
       - run: npm run repro
